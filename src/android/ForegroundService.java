@@ -9,6 +9,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
@@ -289,7 +290,8 @@ public class ForegroundService extends Service {
             return;
 
         try {
-            int aRGB = Integer.parseInt(hex, 16) + 0xFF000000;
+            //int aRGB = Integer.parseInt(hex, 16) + 0xFF000000;
+            int aRGB = Color.parseColor(hex);
             notification.setColor(aRGB);
         } catch (Exception e) {
             e.printStackTrace();
