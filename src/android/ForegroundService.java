@@ -295,8 +295,8 @@ public class ForegroundService extends Service {
             return;
 
         try {
-            //int aRGB = Integer.parseInt(hex, 16) + 0xFF000000;
-            int aRGB = Color.parseColor(hex);
+            int aRGB = Integer.parseInt(hex, 16) + 0xFF000000;
+            //int aRGB = Color.parseColor(hex);
             notification.setColor(aRGB);
         } catch (Exception e) {
             e.printStackTrace();
