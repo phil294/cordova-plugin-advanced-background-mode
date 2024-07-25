@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Binder;
@@ -112,7 +113,7 @@ public class ForegroundService extends Service {
             if (Build.VERSION.SDK_INT < 34) {
                 startForeground(NOTIFICATION_ID, makeNotification());
             } else {
-                startForeground(NOTIFICATION_ID, makeNotification(), FOREGROUND_SERVICE_TYPE_DATA_SYNC);
+                startForeground(NOTIFICATION_ID, makeNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC);
             }
         }
 
@@ -207,9 +208,9 @@ public class ForegroundService extends Service {
             // PendingIntent contentIntent = PendingIntent.getActivity(
             //         context, NOTIFICATION_ID, intent,
             //         PendingIntent.FLAG_UPDATE_CURRENT);
-            
-            PendingIntent contentIntent = PendingIntent.getActivity( 
-                context, NOTIFICATION_ID, intent, 
+
+            PendingIntent contentIntent = PendingIntent.getActivity(
+                context, NOTIFICATION_ID, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
 
