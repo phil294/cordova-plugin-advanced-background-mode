@@ -66,7 +66,7 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="de.einfachhans.BackgroundMode.ForegroundService" />
+            <service android:name="de.einfachhans.BackgroundMode.ForegroundService" android:foregroundServiceType="dataSync" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
